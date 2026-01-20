@@ -2,7 +2,7 @@
 <html lang="pt">
 <head>
   <meta charset="UTF-8">
-  <title>HospedaAngola</title>
+  <title>Hospeda Aqui</title>
 <!-- ESTILO -->
   <style>
     body {
@@ -128,9 +128,9 @@
 <body>
 
 <!-- CABEÇALHO -->
- <h1>Bem-Vindo ao Hospeda Angola</h1>
+ <h1>Bem-Vindo ao Hospeda Aqui</h1>
 <header>
-   <h1>Bem-Vindo ao Hospeda Angola</h1>
+   <h1>Bem-Vindo ao Hospeda Aqui</h1>
   <h3>Melhor em dar sugestões de serviços de Hotelarias</h3>
 
 </header>
@@ -140,7 +140,7 @@
 
   
 
-  <h4> A hospeda Angola é uma plataforma desenvolvida, para fazer a comparação de Hosteis e Hospedarias de médio e pequeno porte em Angola.</h4>
+  <h4> A hospeda Aqui é uma plataforma desenvolvida, para fazer a comparação de Hosteis e Hospedarias de médio e pequeno porte na cidade de Luanda</h4>
   <p>Sabendo que há um índice elevado de usuários de internet, optou-se em criar essa plataforma,<br>
     que de forma eficiente ajuda-te a saber quais são os serviços dos hoteis e hospedaria sem deslocar-se.</p>
 </section>
@@ -192,7 +192,7 @@
 
   <ul>
     <li>Poucos Custos </li>
-    <li>Qualquer ente pode aderir</li>
+    <li>Qualquer um pode aderir</li>
     
 </section>
 

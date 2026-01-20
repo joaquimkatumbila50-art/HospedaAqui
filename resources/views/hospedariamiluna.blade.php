@@ -2,7 +2,7 @@
 <html lang="pt">
 <head>
   <meta charset="UTF-8">
-  <title>HospedaAngola</title>
+  <title>Hospeda Aqui</title>
 <!-- ESTILO -->
   <style>
     body {
