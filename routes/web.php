@@ -24,3 +24,19 @@ Route::get('/hospedariamarazul', function () {
 Route::get('/hospedariamiluna', function () {
     return view('hospedariamiluna');
 });
+
+use Illuminate\App\Http\Controllers\HotelController;
+Route::resource("Hotel", HotelController::class);
+
+Route::get('/cadastrar', function () {
+    return view('cadastar');
+});
+
+
+Route::get('/listar', function () {
+    return view('listar');
+});
+
+
+
+
