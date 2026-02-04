@@ -6,13 +6,16 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
+    
     public function up(): void
     {
         Schema::create('hotels', function (Blueprint $table) {
             $table->id();
+            $table->string('nome');
+            $table->string('endereco');
+            $table->string('cidade');
+            $table->decimal('preco', 8, 2);
+            $table->text('descricao')->nullable();
             $table->timestamps();
         });
     }

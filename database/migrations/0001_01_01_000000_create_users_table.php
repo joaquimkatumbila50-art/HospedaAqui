@@ -15,9 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('endereco');
-            $table->string('cidade')();
+            $table->string('cidade');
             $table->decimal('preco');
-            $table->text(descrição)->nullable();
+            $table->text('descrição')->nullable();
             $table->timestamps();
         });
 

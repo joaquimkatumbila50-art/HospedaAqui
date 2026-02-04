@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HotelController;
+
 
 Route::get('/', function () {
     return view('home');
@@ -25,7 +27,7 @@ Route::get('/hospedariamiluna', function () {
     return view('hospedariamiluna');
 });
 
-use Illuminate\App\Http\Controllers\HotelController;
+
 Route::resource("Hotel", HotelController::class);
 
 Route::get('/cadastrar', function () {
@@ -37,6 +39,21 @@ Route::get('/listar', function () {
     return view('listar');
 });
 
+
+
+
+Route::get('/', function () {
+    return view('home');
+    });
+    
+
+Route::get('/hotels', [HotelController::class, 'index'])->name('hotels.index');
+Route::get('/hotels/create', [HotelController::class, 'create'])->name('hotels.create'); 
+
+Route::post('/hotels', [HotelController::class, 'store'])->name('hotels.store');
+Route::get('/hotels/{id}/edit', [HotelController::class, 'edit'])->name('hotels.edit');
+Route::put('/hotels/{id}', [HotelController::class, 'update'])->name('hotels.update');
+Route::delete('/hotels/{id}', [HotelController::class, 'destroy'])->name('hotels.destroy');
 
 
 

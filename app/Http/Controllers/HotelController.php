@@ -7,43 +7,69 @@ use Illuminate\Http\Request;
 
 class HotelController extends Controller
 {
-    // LISTAR hotéis
     public function index()
     {
-        $hoteis = Hotel::all();
-        return view('hoteis.index', compact('hoteis'));
+        $hotels = Hotel::all();
+        return view('hotels.index', compact('hotels'));
     }
 
-    // MOSTRAR formulário
     public function create()
     {
-        return view('hoteis.create');
+        return view('hotels.create');
     }
 
-    // 
     public function store(Request $request)
-    {
-        Hotel::create($request->all());
-        return redirect()->route('hoteis.index');
+    {        
+        $request->validate([
+            'nome' => 'required',
+            'endereco' => 'required',
+            'cidade' => 'required',
+            'preco' => 'required|numeric',
+            'descricao' => 'nullable'
+        ]);
+
+        Hotel::create([
+            'nome' => $request->nome,
+            'endereco' => $request->endereco,
+            'cidade' => $request->cidade,
+            'preco' => $request->preco,
+            'descricao' => $request->descricao
+        ]);
+
+        return redirect()->route('hotels.index')->with('success', 'Hotels cadastrado com sucesso!');
     }
 
-    // EDITAR
-    public function edit(Hotel $hotel)
+    public function edit($id)
     {
-        return view('hoteis.edit', compact('hotel'));
+    
+
+    $hotel = Hotel::findOrFail($id); // pega o hotel pelo ID
+    return view('hotels.edit', compact('hotel')); // envia $hotel para a view
+
+
     }
 
-    // ATUALIZAR
-    public function update(Request $request, Hotel $hotel)
+    public function update(Request $request, $id)
     {
-        $hotel->update($request->all());
-        return redirect()->route('hoteis.index');
+        $request->validate([
+            'nome' => 'required',
+            'endereco' => 'required',
+            'cidade' => 'required',
+            'preco' => 'required|numeric',
+            'descricao' => 'nullable'
+        ]);
+
+        $hotels = Hotel::findOrFail($id);
+        $hotels->update($request->all());
+
+        return redirect()->route('hotels.index')->with('success', 'Hotels atualizado com sucesso!');
     }
 
-    // EXCLUIR
-    public function destroy(Hotel $hotel)
+    public function destroy($id)
     {
-        $hotel->delete();
-        return redirect()->route('hoteis.index');
+        $hotels = Hotel::findOrFail($id);
+        $hotels->delete();
+
+        return redirect()->route('hotels.index')->with('success', 'Hotels excluído com sucesso!');
     }
 }
