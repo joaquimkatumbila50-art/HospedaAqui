@@ -1,12 +1,10 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Lista de Hotéis</title>
-</head>
-<body>
-    <h1>Lista de Hotéis</h1>
 
-    <a href="{{ route('hotels.create') }}">Cadastrar Novo Hotel</a>
+    @extends('layouts.app')
+    @section('content')
+
+    <h1>Lista de Hotéis</h1>
+    
+    <a href="{{ route('hotels.create') }}" class="btn">Cadastrar Hotel</a>
 
     <table border="1" cellpadding="5">
         <thead>
@@ -28,7 +26,7 @@
                     <td>{{ $hotel->cidade }}</td>
                     <td>{{ $hotel->preco }}</td>
                     <td>
-                        <a href="{{ route('hotels.edit', $hotel->id) }}">Editar</a>
+                         <a href="{{ route('hotels.edit', $hotel->id) }}" class="btn">Editar</a>
                         
                         <form action="{{ route('hotels.destroy', $hotel->id) }}" method="POST" style="display:inline;">
                             @csrf
@@ -40,5 +38,5 @@
             @endforeach
         </tbody>
     </table>
-</body>
-</html>
+
+    @endsection

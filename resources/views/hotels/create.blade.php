@@ -1,3 +1,8 @@
+@extends('layouts.app')
+
+@section('content')
+
+
 <h1>Cadastrar Hotel</h1>
 <form action="{{ route('hotels.store') }}" method="POST">
     @csrf
