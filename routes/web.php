@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HotelController;
+use App\Http\Controllers\UserController;
 
 
 Route::get('/', function () {
@@ -54,6 +55,21 @@ Route::post('/hotels', [HotelController::class, 'store'])->name('hotels.store');
 Route::get('/hotels/{id}/edit', [HotelController::class, 'edit'])->name('hotels.edit');
 Route::put('/hotels/{id}', [HotelController::class, 'update'])->name('hotels.update');
 Route::delete('/hotels/{id}', [HotelController::class, 'destroy'])->name('hotels.destroy');
+
+
+
+
+
+
+
+Route::get('/users', [UserController::class, 'index'])->name('users.listar');
+Route::get('/users/create', [UserController::class, 'create'])->name('users.create'); 
+
+Route::post('/users', [UserController::class, 'store'])->name('users.store');
+Route::get('/users/{id}/edit', [UserController::class, 'edit'])->name('users.edit');
+Route::put('/users/{id}', [UserController::class, 'update'])->name('users.update');
+Route::delete('/users/{id}', [UserController::class, 'destroy'])->name('users.destroy');
+
 
 
 

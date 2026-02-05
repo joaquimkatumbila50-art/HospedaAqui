@@ -53,16 +53,16 @@ class HotelController extends Controller
     {
         $request->validate([
             'nome' => 'required',
-            'endereco' => 'required',
-            'cidade' => 'required',
-            'preco' => 'required|numeric',
-            'descricao' => 'nullable'
+            'email' => 'required|email|unique:users,email,'.$id,
+            'password' => 'required',
+            'role' => 'required',
+        
         ]);
 
         $hotels = Hotel::findOrFail($id);
         $hotels->update($request->all());
 
-        return redirect()->route('hotels.index')->with('success', 'Hotels atualizado com sucesso!');
+        return redirect()->route('user.index')->with('success', 'Hotels atualizado com sucesso!');
     }
 
     public function destroy($id)
